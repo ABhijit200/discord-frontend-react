@@ -1,0 +1,178 @@
+@use '../../global.scss';
+
+body {
+  overflow-x: hidden;
+}
+.banner-home {
+  min-height: 90vh;
+}
+.hero-image {
+  pointer-events: none;
+  z-index: -1;
+  position: absolute;
+  height: 110%;
+  width: 120%;
+  left: -10%;
+  top: -10%;
+}
+.banner_text {
+  padding: 5em 0;
+  text-align: center;
+  color: global.$off-white;
+}
+.banner_header {
+  font-family: "whitney bold";
+  font-size: 3.5em;
+}
+.banner_info {
+  padding: 2em 0;
+  font-family: "whitney light";
+  width: 60%;
+  margin: 0 auto;
+  line-height: 2;
+  font-size: 1em;
+}
+.download_container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  width: 50%;
+  margin: 0 auto;
+  .home_download {
+    height: 10vh;
+    transition: 200ms ease;
+    &:hover {
+      filter: drop-shadow(0 2px 5px global.$not-quite-black);
+    }
+  }
+  .home_download:nth-child(1) {
+    span {
+      margin-left: 0.2em;
+    }
+    background-color: global.$off-white;
+    * {
+      transition: 200ms ease;
+      color: global.$not-quite-black;
+    }
+    &:hover {
+      * {
+        color: global.$brand;
+      }
+    }
+  }
+  .home_download:nth-child(2) {
+    svg {
+      display: none;
+    }
+    background-color: global.$not-quite-black;
+  }
+}
+.grid-sections {
+  background-color: white;
+}
+.card {
+  background-color: white;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 30vh 5%;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-between;
+  &:nth-child(even) {
+    .card-image {
+      order: 2;
+    }
+    background-color: global.$off-white;
+  }
+  &:nth-child(4) {
+    padding-bottom: 0;
+    .card-image {
+      order: 2;
+    }
+    * {
+      text-align: center;
+    }
+    padding-top: 2em;
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+}
+.card-image {
+  margin: 0 auto;
+  pointer-events: none;
+}
+.card-span {
+  * {
+    color: global.$not-quite-black;
+  }
+  padding: 0 5em;
+}
+.card-header {
+  font-family: "whitney bold";
+  font-size: 2.5em;
+}
+.card-para {
+  font-size: 1.1em;
+  padding: 1em 0;
+  opacity: 0.8;
+  font-family: "whitney light";
+}
+
+@media (max-width: 768px) {
+  .top_nav {
+    background-color: global.$brand-dark;
+    width: 100vw;
+    padding: 0 1em;
+  }
+  .hero-image {
+    display: none;
+  }
+  .banner-home {
+    background: url("../../assets/images/home/hero-bg.jpg") center;
+    background-size: cover;
+    min-height: 90vh;
+  }
+  .banner_text {
+    padding: 1em 1.5em;
+    text-align: left;
+  }
+  .banner_header {
+    font-size: 3em;
+    padding-top: 1em;
+  }
+  .banner_info {
+    margin: 0;
+    width: initial;
+    font-size: 1.1em;
+  }
+  .download_container {
+    width: 100%;
+    justify-content: left;
+    grid-template-columns: 1fr;
+    gap: 1em;
+  }
+  .home_download {
+    height: 8vh !important;
+    width: 100%;
+  }
+  .home_download:nth-child(2) {
+    display: none;
+  }
+  .card {
+    padding: 15vh 0;
+    grid-template-columns: 1fr;
+    &:nth-child(2) {
+      padding-top: 2em;
+    }
+  }
+  .card-span {
+    padding: 0 1em;
+  }
+  .card-image {
+    order: 1;
+    width: 95%;
+    margin: 1em 0;
+  }
+}

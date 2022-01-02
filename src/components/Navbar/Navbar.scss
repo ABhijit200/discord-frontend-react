@@ -1,0 +1,152 @@
+@use '../../global.scss';
+
+.top_nav {
+  background-color: global.$brand-dark;
+  display: flex;
+  height: 12vh;
+  padding: 0 4em;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+  * {
+    font-family: "whitney medium";
+  }
+}
+.top-logo {
+  height: 60%;
+  cursor: pointer;
+}
+.top_ul {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  justify-content: center;
+  li {
+    margin: 1em;
+    a {
+      color: global.$off-white;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.open-discord {
+  background-color: global.$off-white;
+  color: global.$not-quite-black;
+  padding: 0.8em;
+  text-decoration: none;
+  border-radius: 1.5em;
+  transition: 200ms ease;
+  &:hover {
+    color: global.$text-link;
+  }
+}
+.fas.fa-bars {
+  font-size: 1.5em;
+  color: global.$off-white;
+  display: none;
+  margin-right: 0.5em;
+}
+.sideNav {
+  z-index: 10;
+  padding: 1em 0;
+  opacity: 0;
+  pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: white;
+  height: 100vh;
+  width: 70vw;
+  transition: 200ms ease;
+  display: none;
+}
+.sideNav.triggered {
+  pointer-events: initial;
+  opacity: 1;
+}
+.side_header {
+  display: flex;
+  height: 8vh;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  margin: 0 auto;
+  img {
+    height: 80%;
+  }
+  .fas.fa-times {
+    color: global.$not-quite-black;
+    font-size: 1.5em;
+    margin-right: 0.2em;
+  }
+}
+.side_hr {
+  width: 90%;
+  margin: 0.5em auto;
+  opacity: 0.7;
+}
+.side_ul {
+  padding-left: 2em;
+  list-style: none;
+  li {
+    &:nth-child(1) {
+      position: relative;
+      left: -1em;
+      background-color: global.$off-white;
+      padding: 1em;
+      border-radius: 1em;
+      a {
+        color: global.$text-link;
+      }
+    }
+    margin: 2em 0;
+    a {
+      text-decoration: none;
+      color: global.$not-quite-black;
+      font-family: "whitney medium";
+      font-size: 1.2em;
+    }
+  }
+}
+.side_download {
+  background-color: global.$brand;
+  display: flex;
+  align-items: center;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  justify-content: center;
+  gap: 1em;
+  text-decoration: none;
+  height: 7vh;
+  width: 85%;
+  border-radius: 2em;
+  * {
+    color: white;
+    font-family: "whitney medium";
+    font-size: 1.2em;
+  }
+  span {
+    margin-left: 0.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-logo {
+    height: 40%;
+  }
+  .top_ul {
+    display: none;
+  }
+  .open-discord {
+    display: none;
+  }
+  .fas.fa-bars {
+    display: block;
+  }
+  .sideNav {
+    display: initial;
+  }
+}

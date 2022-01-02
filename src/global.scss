@@ -1,0 +1,17 @@
+$brand: #7289da;
+$brand-dark: #3261eb;
+$greyple: #99aab5;
+$text-link: #00b0f4;
+$off-white: #f6f6f6;
+$error-purple: #d5d7f6;
+$error-text: #72767d;
+$not-quite-black: #23272a;
+
+@font-face {
+  font-family: "Whitney Medium";
+  src: url("./assets/fonts/whitneymedium.woff") format("woff");
+}
+@font-face {
+  font-family: "Whitney Bold";
+  src: url("./assets/fonts/whitneybold.woff") format("woff");
+}

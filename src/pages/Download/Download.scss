@@ -1,0 +1,163 @@
+@use '../../global.scss';
+
+.download_banner {
+  min-height: 88vh;
+  background-color: global.$brand-dark;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 0 4em;
+  gap: 2em;
+}
+.download_header {
+  font-size: 3.5em;
+  font-family: "whitney bold";
+  color: global.$off-white;
+  padding-bottom: 0.5em;
+}
+.download_para {
+  font-size: 1.2em;
+  color: global.$off-white;
+  padding-bottom: 1.2em;
+  font-family: "whitney medium";
+  line-height: 1.5;
+}
+.download_button_container {
+  * {
+    font-family: "whitney medium";
+  }
+  display: flex;
+  gap: 1em;
+  align-items: center;
+  .download_cta {
+    border-radius: 2em;
+    background-color: global.$off-white;
+    color: global.$not-quite-black;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 0.8em;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    &:hover {
+      color: global.$text-link;
+    }
+    .cta_download {
+      margin-right: 0.5em;
+    }
+  }
+  .device_info {
+    color: global.$off-white;
+  }
+}
+.download_banner_image {
+  pointer-events: none;
+}
+.download_grid {
+  margin: 4em auto;
+  width: 90%;
+  gap: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: global.$not-quite-black;
+  font-size: 1.5em;
+  .d1,
+  .d2 {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  .d2 {
+    margin: 6em 0;
+  }
+}
+.download_card {
+  * {
+    font-family: "whitney medium";
+    display: block;
+  }
+  height: 100vh;
+  overflow: hidden;
+  display: grid;
+  justify-content: center;
+  border-radius: 1em;
+  text-align: center;
+  padding: 2em;
+  background-color: global.$off-white;
+}
+.download_card_link {
+  background-color: global.$not-quite-black;
+  width: 50%;
+  margin: 1em auto;
+  padding: 0.8em;
+  border-radius: 2em;
+  text-decoration: none;
+  color: global.$off-white;
+}
+.experimental {
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  h3,
+  p {
+    text-align: left;
+  }
+  h3 {
+    font-family: "whitney medium";
+  }
+  p {
+    margin: 1em 0;
+    font-family: "whitney light";
+    font-size: 0.8em;
+  }
+  a {
+    width: 90%;
+    margin: 1em 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .download_banner {
+    padding: 1em 2em 0 2em;
+    grid-template-columns: 1fr;
+    align-items: flex-start;
+    gap: initial;
+  }
+  .download_button_container {
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .download_cta {
+    width: 100%;
+    justify-content: center;
+  }
+  .download_banner_image {
+    width: 100%;
+  }
+  .device_info {
+    margin-top: 1em;
+  }
+  .download_grid {
+    margin: 2em auto;
+    display: flex;
+    flex-direction: column;
+    .d2 {
+      margin: -1em 0;
+    }
+  }
+  .download_card {
+    width: 100%;
+    height: 50vh;
+    margin: 1em 0;
+  }
+  .download_card_image {
+    width: 100%;
+  }
+  .download_card_link {
+    width: 100%;
+  }
+  .experimental {
+    display: none;
+  }
+}

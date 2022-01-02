@@ -1,0 +1,81 @@
+@use '../../global.scss';
+
+.error_banner {
+  padding: 0 4em 2em 4em;
+  height: 88vh;
+  background-color: global.$off-white;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+}
+.error_d1,
+.error_d2 {
+  display: grid;
+  flex-direction: column;
+  justify-content: center;
+}
+.error_header {
+  font-family: "Archivo Black";
+  font-size: 10em;
+  color: global.$error-purple;
+}
+.info_header {
+  font-size: 1.5em;
+  font-family: "whitney bold";
+  color: global.$error-text;
+  padding-bottom: 1em;
+}
+.error_info {
+  font-family: "whitney light";
+  color: global.$error-text;
+  opacity: 0.8;
+  line-height: 1.7;
+  font-size: 1.1em;
+}
+.error_image {
+  pointer-events: none;
+  width: 95%;
+  padding: 1em;
+}
+.back_home {
+  display: block;
+  background-color: global.$error-purple;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  width: 50%;
+  text-align: center;
+  text-decoration: none;
+  color: global.$not-quite-black;
+  border-radius: 2em;
+}
+
+@media (max-width: 768px) {
+  .error_banner {
+    * {
+      text-align: center;
+    }
+    height: 75vh;
+    padding: 0 1em;
+    grid-template-columns: 1fr;
+  }
+  .error_d2 {
+    display: none;
+  }
+  .error_header {
+    color: global.$brand;
+  }
+  .info_header,
+  .error_info {
+    color: global.$not-quite-black;
+  }
+  .info_header {
+    opacity: 0.8;
+  }
+  .back_home {
+    margin: 1em auto;
+    background-color: global.$brand-dark;
+    color: global.$off-white;
+  }
+}

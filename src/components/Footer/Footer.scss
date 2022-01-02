@@ -1,0 +1,148 @@
+@use '../../global.scss';
+
+footer {
+  padding: 4em 2em;
+  background-color: global.$not-quite-black;
+}
+.wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  justify-content: center;
+}
+.column_two,
+.column_three,
+.column_four,
+.column_five {
+  display: grid;
+  justify-content: center;
+}
+.header {
+  color: global.$brand !important;
+}
+.column_one {
+  .c1_header {
+    font-size: 2em;
+    font-family: "whitney bold";
+  }
+  .flag_and_text {
+    display: flex;
+    align-items: center;
+    margin: 2em 0;
+  }
+  .footer_flag {
+    height: 1.5em;
+  }
+  .language {
+    color: white;
+    margin-left: 0.5em;
+    font-size: 0.8em;
+    font-family: "whitney light";
+    opacity: 0.8;
+  }
+  .social_ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    * {
+      color: white;
+    }
+    li {
+      position: relative;
+      left: -0.5em;
+      cursor: pointer;
+      font-size: 1.5em;
+      margin: 0 0.5em;
+      &:hover {
+        * {
+          color: global.$brand;
+        }
+      }
+    }
+  }
+}
+.c2_ul {
+  * {
+    font-family: "whitney light";
+  }
+  list-style: none;
+  li {
+    margin-bottom: 0.1em;
+    &:nth-child(1) {
+      margin-bottom: 1.5em;
+      a {
+        color: global.$brand;
+        font-size: 1.2em;
+      }
+    }
+    a {
+      font-size: 0.8em;
+      text-decoration: none;
+      color: white;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.footer_hr {
+  height: 1px;
+  margin: 2em auto;
+  background-color: global.$brand;
+  border: none;
+  border-radius: 10px;
+}
+.footer_nav {
+  height: 12vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.footer_logo {
+  height: 60%;
+}
+.footer_open {
+  background-color: global.$brand;
+  color: white;
+  text-decoration: none;
+  padding: 1em;
+  border-radius: 2em;
+  font-size: 0.8em;
+  font-family: "whitney medium";
+}
+@media (max-width: 768px) {
+  .column_one,
+  .column_two,
+  .column_three,
+  .column_four,
+  .column_five {
+    overflow-x: hidden;
+    justify-content: left;
+  }
+  .column_one {
+    grid-area: talk;
+  }
+  .column_two {
+    grid-area: u1;
+  }
+  .column_three {
+    grid-area: u2;
+  }
+  .column_four {
+    grid-area: u3;
+  }
+  .column_five {
+    grid-area: u4;
+  }
+  .column_four,
+  .column_five {
+    margin-top: 2em;
+  }
+  .wrapper {
+    grid-template-areas:
+      "talk talk"
+      "u1 u2"
+      "u3 u4";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
